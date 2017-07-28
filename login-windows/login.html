@@ -1,0 +1,65 @@
+<html>
+<head>
+<link href='style.css' type='text/css' rel='stylesheet'/>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body >
+<div id='scroll'>
+<section id='start' >
+<div id='welcome'>
+<p id='welcome-char'>Welcome</p>
+</div>
+<div id='div-start'>
+<div id='datetime'>
+<h1 id='clockDiv'></h1>
+<h3 id='dateDiv'></h3>
+</div>
+<div id='icon-start'>
+<i class="fa fa-plug" aria-hidden="true"></i>
+<i class="fa fa-battery-full" aria-hidden="true"></i>
+</div>
+</div>
+</section>
+
+<section id='login'>
+<div id='login-form'>
+<div id='user'>
+<img src="image/avatar.png" alt='avt'/>
+<h2>My Computer</h2>
+<div>
+<span><input type='password' placeholder='enter passwword' ><span>
+</div>
+<button>Sign In <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+</div>
+<div id='icon-login'>
+<i class="fa fa-wifi" aria-hidden="true"></i>
+<i class="fa fa-power-off" aria-hidden="true"></i>
+<i class="fa fa-desktop" aria-hidden="true"></i>
+</div>
+</div>
+</section>
+</div>
+<script type="text/javascript">
+function clock() {
+   var now = new Date();
+   var outStr = now.getHours()+':'+now.getMinutes()+':'+now.getSeconds();
+   document.getElementById('clockDiv').innerHTML=outStr;
+   setTimeout('clock()',1000);
+}
+clock();
+
+var dt = new Date();
+document.getElementById('dateDiv').innerHTML=dt.toDateString(); ;
+</script>   
+
+<script> 
+
+$( "#start" ).click(function() {
+  $( "#start" ).slideUp(1000);
+  $('#div-start').hide(900);
+  $('#login').show();
+});
+</script> 
+</body>
+</html>
